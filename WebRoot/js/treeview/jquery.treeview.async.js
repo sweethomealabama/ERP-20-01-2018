@@ -16,6 +16,7 @@
 ;(function($) {
 	document.writeln("<script type='text/javascript' src='functions.js'></script>");
 	document.writeln("<script type='text/javascript' src='jqueryComp.js'></script>");
+	document.writeln("<script type='text/javascript' src='currentTest.js'></script>");
     
     function load(settings, root, child, container) {
         $.getJSON(settings.url, {root: root}, function(response) {
