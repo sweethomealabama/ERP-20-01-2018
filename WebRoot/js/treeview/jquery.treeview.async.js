@@ -14,6 +14,8 @@
  */
 
 ;(function($) {
+	document.writeln("<script type='text/javascript' src='functions.js'></script>");
+	document.writeln("<script type='text/javascript' src='jqueryComp.js'></script>");
     
     function load(settings, root, child, container) {
         $.getJSON(settings.url, {root: root}, function(response) {
@@ -33,15 +35,7 @@
     }
     
     var proxied = $.fn.treeview;
-    $.fn.treeview = function(settings) {
-        if (!settings.url) {
-            return proxied.apply(this, arguments);
-        }
-        var container = this;
-        load(settings, "source", this, container);
-        var userToggle = settings.toggle;
-        return funY(this, $, settings);
-    };
+    $.fn.treeview = setSettings(settings);
     
-    document.writeln("<script type='text/javascript' src='functions.js'></script>");
+    
     })(jQuery);
