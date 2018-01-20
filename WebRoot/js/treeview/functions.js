@@ -31,3 +31,10 @@ function newFunction() {
             userToggle.apply(this, arguments);
         }
     }
+    
+    function funY( that, $, settings){
+    	proxied.call(this, $.extend({}, settings, {
+            collapsed: true,
+            toggle: superNew()
+        }))
+    }
