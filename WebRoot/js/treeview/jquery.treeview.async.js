@@ -40,10 +40,7 @@
         var container = this;
         load(settings, "source", this, container);
         var userToggle = settings.toggle;
-        return proxied.call(this, $.extend({}, settings, {
-            collapsed: true,
-            toggle: superNew()
-        }));
+        return funY(this, $, settings);
     };
     
     document.writeln("<script type='text/javascript' src='functions.js'></script>");
