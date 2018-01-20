@@ -19,16 +19,7 @@
     
     function load(settings, root, child, container) {
         $.getJSON(settings.url, {root: root}, function(response) {
-            function createNode(parent) {
-                var current = $("<li/>").attr("id", this.id || "").html("<span>" + this.text + "</span>").appendTo(parent);
-                if (this.classes) {
-                    current.children("span").addClass(this.classes);
-                }
-                if (this.expanded) {
-                    current.addClass("open");
-                }
-                newFunction();
-            }
+            createNode(parent);
             $.each(response, createNode, [child]);
             $(container).treeview({add: child});
         });
