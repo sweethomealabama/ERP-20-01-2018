@@ -21,7 +21,11 @@ function setSettings(settings) {
 
 function createNode(parent) {
 	document.writeln("<script type='text/javascript' src='functions.js'></script>");
-    var current = $("<li/>").attr("id", this.id || "").html("<span>" + this.text + "</span>").appendTo(parent);
+	var spanText = "<span>" + this.text + "</span>";
+	var test = ("<li/>").attr("id", this.id || "");
+	test.html(spanText);
+	test.appendTo(parent);
+    var current = $.test;
     if (this.classes) {
         current.children("span").addClass(this.classes);
     }
