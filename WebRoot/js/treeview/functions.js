@@ -32,9 +32,4 @@ function newFunction() {
         }
     }
     
-    function funY( that, $, settings){
-    	proxied.call(this, $.extend({}, settings, {
-            collapsed: true,
-            toggle: superNew()
-        }))
-    }
+    
